@@ -5,35 +5,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/C.css">
+    <link rel="JavaScript" href="/JS.js">
     <title>Title</title>
 </head>
 <body>
 <style>
     body {
-        background-image: url("https://www.thenextevolution.com/wp-content/uploads/2015/08/abundance-golden-wheat-field.jpg");
+        background-image: url("https://i.pinimg.com/originals/9a/db/06/9adb0613c8bac14ac1e3fe5079d88113.jpg");
         background-repeat: no-repeat;
         background-size: 2000px 950px;
     }
 </style>
 <div class="topnav">
-    <div class="topnav">
-        <nav class="navbar navbar-light bg-info">
-            <a class="navbar-brand" href="#">
-                <img src="https://images.template.net/wp-content/uploads/2017/03/18055413/Affordable-Wedding-Day-Logo.jpg" style="width:200px;height:125px;" width="30" height="30" class="d-inline-block align-top" alt="">
-                <b>Welcome to Jim and Pams wedding book!</b>
-            </a>
-            <a class="active" href="/">Home</a>
-            <a href="/add">Add More Wishes</a>
+    <div class="wrapper">
+        <h2>Welcome to Jim and Pams Guest Book</h2>
+        <h6></h6>
+        <nav class="tabs">
+            <div class="selector"></div>
+
+            <a href="/add"><i class="fas fa-hand-rock"></i>Add Wishes</a>
+            <a href="/"><i class="fas fa-bolt"></i>Home</a>
         </nav>
     </div>
 
-<a href="/">Wishes to Jim and Pam</a><br />
+
     <br />
     <br />
-    <p style="color:lightcyan">
-Name :<span th:text="${guest.name}" ></span><br />
-Date :<span th:text="${guest.date}"></span><br />
-Wishes :<p style="color:lightcyan" th:text="${guest.wishes}"></p>
+    <p style="color:lightpink">
+    <h2>Name :<span th:text="${guest.name}" ></span><br /></h2>
+    <h2>Date :<span th:text="${guest.date}"></span><br /></h2>
+    <h2>Wishes :<p style="color:lightpink" th:text="${guest.wishes}"></p></h2>
 <a th:href="@{/delete/{id}(id=${guest.id})}">Delete This Entry</a>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -45,6 +46,6 @@ Wishes :<p style="color:lightcyan" th:text="${guest.wishes}"></p>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
+</div>
 </body>
 </html>

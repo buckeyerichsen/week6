@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/C.css">
+    <link rel="JavaScript" href="/JS.js">
     <title>Title</title>
 
     <style>
@@ -15,32 +16,33 @@
         }
 
         td, th {
-            border: 1px solid #dddddd;
+
             text-align: left;
             padding: 8px;
         }
 
         tr:nth-child(even) {
-            background-color: #dddddd;
+
         }
     </style>
 </head>
 <body>
 <style>
     body {
-        background-image: url("https://www.thenextevolution.com/wp-content/uploads/2015/08/abundance-golden-wheat-field.jpg");
+        background-image: url("https://i.pinimg.com/originals/9a/db/06/9adb0613c8bac14ac1e3fe5079d88113.jpg");
         background-repeat: no-repeat;
         background-size: 2000px 950px;
     }
 </style>
-<div class="topnav">
-    <nav class="navbar navbar-light bg-info">
-        <a class="navbar-brand" href="#">
-            <img src="https://images.template.net/wp-content/uploads/2017/03/18055413/Affordable-Wedding-Day-Logo.jpg" style="width:200px;height:125px;" width="30" height="30" class="d-inline-block align-top" alt="">
-            <b>Welcome to Jim and Pams wedding book!</b>
-        </a>
-        <a class="active" href="/">Home</a>
-        <a href="/add">Add More Wishes</a>
+<div class="wrapper">
+    <h2>Welcome to Jim and Pams Guest Book</h2>
+    <h6></h6>
+    <nav class="tabs">
+        <div class="selector"></div>
+
+        <a href="/add"><i class="fas fa-hand-rock"></i>Add Wishes</a>
+        <a href="/"><i class="fas fa-bolt"></i>Home</a>
+
     </nav>
 </div>
 
@@ -51,7 +53,7 @@
         <th>Name</th>
         <th>Date</th>
         <th>Wishes</th>
-        <td>Actions</td>
+        <td>Edit Post</td>
     </tr>
     <tr th:each="guest : ${guests}">
         <td th:text="${guest.name}"></td>
@@ -59,7 +61,7 @@
         <td th:text="${guest.wishes}"></td>
         <td>
             <a th:href="@{/update/{id}(id=${guest.id})}">Update</a>
-            <a th:href="@{/detail/{id}(id=${guest.id})}">Details</a>
+            <a th:href="@{/detail/{id}(id=${guest.id})}">View Post</a>
             <a th:href="@{/delete/{id}(id=${guest.id})}">Delete</a>
         </td>
     </tr>
