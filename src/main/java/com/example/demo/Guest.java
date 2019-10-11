@@ -1,12 +1,21 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Guest {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    private String name;
+    private String title;
+    private String departname;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "department_id")
+    private Department department;
+
+
     public long getId() {
         return id;
     }
@@ -23,26 +32,27 @@ public class Guest {
         this.name = name;
     }
 
-    public String getDate() {
-        return date;
+    public String getTitle() {
+        return title;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getWishes() {
-        return wishes;
+    public String getDepartname() {
+        return departname;
     }
 
-    public void setWishes(String wishes) {
-        this.wishes = wishes;
+    public void setDepartname(String departname) {
+        this.departname = departname;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    private String name;
-    private String date;
-    private String wishes;
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/C.css">
-    <link rel="JavaScript" href="/JS.js">
+    <script src="/JS.js"></script>
     <title>Title</title>
 
     <style>
@@ -27,20 +27,20 @@
     </style>
 </head>
 <body>
-<style>
-    body {
-        background-image: url("https://i.pinimg.com/originals/9a/db/06/9adb0613c8bac14ac1e3fe5079d88113.jpg");
-        background-repeat: no-repeat;
-        background-size: 2000px 950px;
-    }
-</style>
+<!--<style>-->
+<!--    body {-->
+<!--        background-image: url("https://i.pinimg.com/originals/9a/db/06/9adb0613c8bac14ac1e3fe5079d88113.jpg");-->
+<!--        background-repeat: no-repeat;-->
+<!--        background-size: 2000px 950px;-->
+<!--    }-->
+<!--</style>-->
 <div class="wrapper">
-    <h2>Welcome to Jim and Pams Guest Book</h2>
+    <h2>sterling solutions</h2>
     <h6></h6>
     <nav class="tabs">
         <div class="selector"></div>
-
-        <a href="/add"><i class="fas fa-hand-rock"></i>Add Wishes</a>
+        <a href="#"><i class="fas fa-bolt"></i>this is the title :)</a>
+        <a href="/add"><i class="fas fa-hand-rock"></i>Add employees</a>
         <a href="/"><i class="fas fa-bolt"></i>Home</a>
 
     </nav>
@@ -51,14 +51,14 @@
 <table>
     <tr>
         <th>Name</th>
-        <th>Date</th>
-        <th>Wishes</th>
+        <th>title</th>
+        <th>department</th>
         <td>Edit Post</td>
     </tr>
     <tr th:each="guest : ${guests}">
         <td th:text="${guest.name}"></td>
-        <td th:text="${guest.date}"></td>
-        <td th:text="${guest.wishes}"></td>
+        <td th:text="${guest.title}"></td>
+        <td th:text="${guest.departname}"></td>
         <td>
             <a th:href="@{/update/{id}(id=${guest.id})}">Update</a>
             <a th:href="@{/detail/{id}(id=${guest.id})}">View Post</a>

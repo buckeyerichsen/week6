@@ -17,12 +17,20 @@ public class HomeController {
 
     @Autowired
     GuestRepository guestRepository;
+    DepartmentRepository departmentRepository;
 
     @RequestMapping("/")
     public String listGuests(Model model){
         model.addAttribute("guests", guestRepository.findAll());
         return "list";
     }
+
+    @RequestMapping("/")
+    public String listDepartments(Model model){
+        model.addAttribute("departments", departmentRepository.findAll());
+        return "departmentlist";
+    }
+
     @GetMapping("/add")
     public String guestForm(Model model){
         model.addAttribute("guest", new Guest());
